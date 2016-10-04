@@ -1,0 +1,7 @@
+{{#foreach navigation}}
+  {{#if @last}}
+    <a id="signup" class="button join" href="{{url}}">{{label}}</a>
+  {{else}}
+    <a class="pseudo button" href="{{url}}">{{label}}</a>
+  {{/if}}
+{{/foreach}}

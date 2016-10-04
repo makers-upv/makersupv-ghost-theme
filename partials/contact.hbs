@@ -1,0 +1,24 @@
+<section class="contact flex one" id="contacto">
+  <form method="POST" action="https://formspree.io/contacto@makersupv.com">
+    <h2>Contáctanos</h2>
+    <div class="flex one two-600">
+      <div>
+        <input name="nombre" placeholder="Nombre" required="required"/>
+      </div>
+      <div>
+        <input type="email" name="email" placeholder="Email" required="required"/>
+      </div>
+    </div>
+    <div class="flex">
+      <div>
+        <textarea name="mensaje" placeholder="Message" required="required"></textarea>
+      </div>
+    </div>
+    <div class="flex">
+      <div>
+        <input type="hidden" name="_subject" value="Contacto web"/>
+        <button class="icon-plane" type="submit">Send</button>
+      </div>
+    </div>
+  </form>
+</section>

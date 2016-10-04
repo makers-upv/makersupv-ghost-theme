@@ -1,0 +1,12 @@
+{{!< default}}
+
+{{#post}}
+  <main class="article">
+    <h1>{{title}}</h1>
+    {{#if image}}
+      <img class="featured" src="{{image}}" alt="Imagen de {{title}}" />
+    {{/if}}
+
+    {{content}}
+  </main>
+{{/post}}

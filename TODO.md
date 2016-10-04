@@ -1,0 +1,6 @@
+- [ ] Fix header
+- [ ] Tag selector doesn't work
+- [ ] Dates appear only in English
+- [ ] Posts can disalign (images are not resized)
+- [ ] Disqus
+- [ ] Probably more

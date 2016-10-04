@@ -1,0 +1,27 @@
+{{!< default}}
+
+<main>
+  <div class="flex one two-600 three-900">
+    {{#if @labs.publicAPI}}
+      {{#get "tags" limit="8" include="count.posts" fields="name,slug" order="count.posts desc" as |categories|}}
+          <div class="category full">
+            {{#foreach categories}}
+              <label>
+                <input type="checkbox" data-type="{{slug}}" />
+                <span class="toggle pseudo button">{{name}}</span>
+              </label>
+            {{/foreach}}
+          </div>
+      {{/get}}
+    {{/if}}
+
+    {{#foreach posts}}
+      {{> post-preview}}
+    {{/foreach}}
+  </div>
+
+  {{pagination}}
+
+  {{> contact}}
+
+</main>

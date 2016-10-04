@@ -1,0 +1,9 @@
+<div class="pagination">
+  {{#if prev}}
+    <a href="{{page_url prev}}">&larr;&nbsp;Más nuevos</a>
+    {{#if next}} | {{/if}}
+  {{/if}}
+  {{#if next}}
+    <a href="{{page_url next}}">Más antiguos&nbsp;&rarr;</a>
+  {{/if}}
+</div>
