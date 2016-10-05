@@ -3,4 +3,5 @@
 - [ ] Dates appear only in English
 - [ ] Posts can disalign (images are not resized)
 - [ ] Disqus
+- [ ] Sweet alert in form doesn't work
 - [ ] Probably more
