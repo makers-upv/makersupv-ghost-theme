@@ -5,5 +5,7 @@
 - [ ] Disqus
 - [x] Sweet alert in form doesn't work
 - [ ] Style the pagination better
-- [ ] Lazy loading / infinite scroll
+- [x] Lazy loading / infinite scroll
+- [ ] Flickr shows both flickr and image
+- [ ] Authorship
 - [ ] Probably more

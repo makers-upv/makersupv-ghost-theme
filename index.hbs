@@ -2,25 +2,31 @@
 
 <main>
   <div class="flex one two-600 three-900">
-    {{#if @labs.publicAPI}}
-      {{#get "tags" limit="8" include="count.posts" fields="name,slug" order="count.posts desc" as |categories|}}
-          <div class="category full">
-            {{#foreach categories}}
-              <label>
-                <input type="checkbox" data-type="{{slug}}" />
-                <span class="toggle pseudo button">{{name}}</span>
-              </label>
-            {{/foreach}}
-          </div>
-      {{/get}}
-    {{/if}}
-
-    {{#foreach posts}}
-      {{> post-preview}}
-    {{/foreach}}
+    {{#is "paged"}}
+      {{> post-list}}
+      {{pagination}}
+    {{else}}
+      {{#if @labs.publicAPI}}
+        {{#get "tags" limit="8" include="count.posts" fields="name,slug" order="count.posts desc" as |categories|}}
+            <div class="category full">
+              {{#foreach categories}}
+                <label>
+                  <input type="checkbox" data-type="{{slug}}" />
+                  <span class="toggle pseudo button">{{name}}</span>
+                </label>
+              {{/foreach}}
+            </div>
+        {{/get}}
+        {{#get "posts" include="tags" limit="all" order="published_at desc"}}
+          {{> post-list-lazy}}
+        {{/get}}
+      {{else}}
+        {{> post-list}}
+        {{pagination}}
+      {{/if}}
+    {{/is}}
   </div>
 
-  {{pagination}}
 
   {{> contact}}
 
