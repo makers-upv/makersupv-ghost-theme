@@ -4,4 +4,6 @@
 - [ ] Posts can disalign (images are not resized)
 - [ ] Disqus
 - [x] Sweet alert in form doesn't work
+- [ ] Style the pagination better
+- [ ] Lazy loading / infinite scroll
 - [ ] Probably more
