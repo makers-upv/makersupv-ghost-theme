@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "build-css": "node-sass --output-style compressed assets/css/src/style.scss > assets/css/style.css",
-    "build-js": "browserify assets/javascript/src/script.js | uglifyjs - > assets/javascript/script.js"
+    "build-js": "browserify assets/javascript/src/script.js | uglifyjs - --compress --mangle > assets/javascript/script.js"
   },
   "devDependencies": {
     "browserify": "^13.1.0",
