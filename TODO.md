@@ -1,7 +1,7 @@
 - [x] Fix header
 - [x] Tag selector doesn't work
 - [ ] Dates appear only in English
-- [ ] Posts can disalign (images are not resized)
+- [x] Posts can disalign (images are not resized)
 - [x] Disqus
 - [x] Sweet alert in form doesn't work
 - [ ] Style the pagination better
