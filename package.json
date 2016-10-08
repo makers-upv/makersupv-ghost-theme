@@ -7,7 +7,6 @@
   },
   "devDependencies": {
     "browserify": "^13.1.0",
-    "flexpoint": "github:franciscop/flexpoint",
     "node-sass": "^3.10.1",
     "picnic": "github:picnicss/picnic",
     "sweetalert": "^1.1.3",
