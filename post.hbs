@@ -9,11 +9,12 @@
 
     {{content}}
 
+    <div id="disqus_thread"></div>
     <script>
       var form = document.querySelector("a.button.form");
       if (form) {
         form.onclick = function(){
-          form.insertAdjacentHTML('afterEnd', '<h3 class="thanks">Gracias! <a href="http://facebook.com/sharer.php?u=http://www.makersupv.com/#{article.id}">Compártelo con tus amigos</a></h3>');
+          form.insertAdjacentHTML('afterEnd', '<h3 class="thanks">Gracias! <a href="http://facebook.com/sharer.php?u={{url absolute="true"}}">Compártelo con tus amigos</a></h3>');
           form.remove();
         }
       }
@@ -31,8 +32,8 @@
 
       /* CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE */
       var disqus_shortname = 'makersupv';
-      var disqus_identifier = "#{ article.id }";
-      var disqus_title = "#{ article.title }";
+      var disqus_identifier = "{{slug}}";
+      var disqus_title = "{{title}}";
       
       (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
