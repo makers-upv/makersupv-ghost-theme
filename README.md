@@ -5,7 +5,7 @@
 
 To edit something:
 
-1. `npm install`
+1. `yarn`
 2. Make sure Ghost is in development mode
 3. If you rename, create or remove a file, restart Ghost
 4. The CSS and JS are automatically generated, edit the files in src/ and then run `npm run build-css` or `npm run build-js`
