@@ -7,9 +7,18 @@
     "umbrellajs": "^2.10.1"
   },
   "devDependencies": {
+    "autoprefixer": "^8.1.0",
+    "bubleify": "^1.1.0",
+    "cssnano": "^3.10.0",
     "fs-extra": "^5.0.0",
     "gulp": "^4.0.0",
+    "gulp-bro": "^1.0.3",
+    "gulp-postcss": "^7.0.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
     "gulp-zip": "^4.1.0",
-    "pump": "^3.0.0"
+    "node-sass-package-importer": "^5.1.0",
+    "pump": "^3.0.0",
+    "uglifyify": "^4.0.5"
   }
 }
