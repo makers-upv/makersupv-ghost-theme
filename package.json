@@ -1,11 +1,9 @@
 {
   "name": "makersupv",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
-    "build-css":
-      "node-sass --output-style compressed assets/css/src/style.scss > assets/css/style.css",
-    "build-js":
-      "browserify assets/javascript/src/script.js | uglifyjs --compress --mangle > assets/javascript/script.js"
+    "build-css": "node-sass --output-style compressed assets/css/src/style.scss > assets/css/style.css",
+    "build-js": "browserify assets/javascript/src/script.js | uglifyjs --compress --mangle > assets/javascript/script.js"
   },
   "devDependencies": {
     "browserify": "^16.1.1",
