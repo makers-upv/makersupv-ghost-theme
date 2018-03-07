@@ -1,6 +1,14 @@
 {
   "name": "makersupv",
   "version": "0.1.0",
+  "license": "MIT",
+  "author": {
+    "name": "Makers UPV",
+    "email": "makersupv@gmail.com"
+  },
+  "config": {
+    "posts_per_page": 18
+  },
   "dependencies": {
     "picnic": "^6.5.0",
     "sweetalert": "^2.1.0",
@@ -22,5 +30,8 @@
     "node-sass-package-importer": "^5.1.0",
     "pump": "^3.0.0",
     "uglifyify": "^4.0.5"
+  },
+  "engines": {
+    "ghost": "^1.0.0"
   }
 }

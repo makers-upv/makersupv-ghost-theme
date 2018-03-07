@@ -3,8 +3,8 @@
 {{#post}}
   <main class="article {{post_class}}">
     <h1>{{title}}</h1>
-    {{#if image}}
-      <img class="article_main_image" src="{{image}}" alt="Imagen de {{title}}" />
+    {{#if feature_image}}
+      <img class="article_main_image" src="{{img_url feature_image}}" alt="Imagen de {{title}}" />
     {{/if}}
 
     {{content}}

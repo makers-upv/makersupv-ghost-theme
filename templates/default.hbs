@@ -7,10 +7,8 @@
       <title>{{meta_title}}</title>
 
       <meta name="keywords" content="Makers UPV, Makers, Valencia">
-      <meta name="description" content="{{meta_description}}">
 
       <link rel="stylesheet" href="{{asset "css/main.entry.css"}}">
-      <link rel="icon" href="{{asset "images/logo.png"}}">
 
       {{ghost_head}}
 
@@ -29,7 +27,7 @@
         </div>
       </nav>
 
-      <div class="hero {{^is "index"}}small{{/is}}" style="background-image: url('{{@blog.cover}}');">
+      <div class="hero {{^is "index"}}small{{/is}}" style="background-image: url('{{@blog.cover_image}}');">
         {{#is "home"}}
           <div class="container">
             <h1>{{@blog.title}}</h1>
