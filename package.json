@@ -1,12 +1,15 @@
 {
   "name": "makersupv",
   "version": "0.0.2",
-  "devDependencies": {
-    "browserify": "^16.1.1",
-    "node-sass": "^4.7.2",
+  "dependencies": {
     "picnic": "^6.5.0",
     "sweetalert": "^2.1.0",
-    "uglify-js": "^3.3.13",
     "umbrellajs": "^2.10.1"
+  },
+  "devDependencies": {
+    "fs-extra": "^5.0.0",
+    "gulp": "^4.0.0",
+    "gulp-zip": "^4.1.0",
+    "pump": "^3.0.0"
   }
 }
