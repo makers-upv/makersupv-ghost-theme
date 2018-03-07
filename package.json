@@ -3,14 +3,14 @@
   "version": "0.0.1",
   "scripts": {
     "build-css": "node-sass --output-style compressed assets/css/src/style.scss > assets/css/style.css",
-    "build-js": "browserify assets/javascript/src/script.js | uglifyjs - --compress --mangle > assets/javascript/script.js"
+    "build-js": "browserify assets/javascript/src/script.js | uglifyjs --compress --mangle > assets/javascript/script.js"
   },
   "devDependencies": {
-    "browserify": "^13.1.0",
-    "node-sass": "^3.10.1",
-    "picnic": "github:picnicss/picnic",
-    "sweetalert": "^1.1.3",
-    "uglifyjs": "^2.4.10",
-    "umbrellajs": "github:umbrellajs/umbrella"
+    "browserify": "^16.1.1",
+    "node-sass": "^4.7.2",
+    "picnic": "^6.5.0",
+    "sweetalert": "^2.1.0",
+    "uglify-js": "^3.3.13",
+    "umbrellajs": "^2.10.1"
   }
 }

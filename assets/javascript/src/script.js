@@ -1,5 +1,5 @@
-var u = require("umbrellajs/umbrella.min.js").u
-var swal = require("sweetalert/dist/sweetalert.min.js")
+var u = require("umbrellajs").u
+var swal = require("sweetalert")
 
 // Lazy load images
 var loaded = false;
