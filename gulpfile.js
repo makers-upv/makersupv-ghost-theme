@@ -7,6 +7,7 @@ const sass = require("gulp-sass")
 const postcss = require("gulp-postcss")
 const zip = require("gulp-zip")
 const fse = require("fs-extra")
+const execa = require("execa")
 
 gulp.task("build:js", () => pump([
   gulp.src("assets/js/**/*.entry.js"),
@@ -63,6 +64,8 @@ gulp.task("package", () => pump([
   gulp.dest("dist/")
 ]))
 
+gulp.task("validate", () => execa("gscan", ["build"], { stdio: "inherit" }))
+
 gulp.task("clean", () => Promise.all(["build", "dist"].map(dir => fse.remove(dir))))
 
-gulp.task("default", gulp.series("clean", "build", "package"))
+gulp.task("default", gulp.series("clean", "build", gulp.parallel(["package", "validate"])))
