@@ -17,13 +17,9 @@
               {{/foreach}}
             </div>
         {{/get}}
-        {{#get "posts" include="tags" limit="all" order="published_at desc"}}
-          {{> post-list-lazy}}
-        {{/get}}
-      {{else}}
-        {{> post-list}}
-        {{pagination}}
       {{/if}}
+      {{> post-list}}
+      {{pagination}}
     {{/is}}
   </div>
 
