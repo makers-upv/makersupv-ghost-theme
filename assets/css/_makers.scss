@@ -302,7 +302,11 @@ article {
   a {
     display: block;
     width: 100%;
-    height: 100%;
+    height: 240px;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
   }
 
   h1 {
@@ -316,15 +320,6 @@ article {
     padding: 6px 12px;
     background: rgba(255, 255, 255, 0.8);
     z-index: 1;
-  }
-
-  img {
-    background-color: #ccc;
-    display: block;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    line-height: 100px;
   }
 
   time {

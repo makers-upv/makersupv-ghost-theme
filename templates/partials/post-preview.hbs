@@ -1,7 +1,6 @@
 <article class="{{post_class}}">
-  <a href="{{url}}">
+  <a href="{{url}}" style="background-image:url('{{#if feature_image}}{{img_url feature_image}}{{else}}{{asset "images/logo.svg"}}{{/if}}')">
     <h1>{{title}}</h1>
-    <img src="{{#if feature_image}}{{img_url feature_image}}{{else}}{{asset "images/logo.svg"}}{{/if}}" alt="Imagen de {{title}}" />
     <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMM"}}</time>
   </a>
 </article>
