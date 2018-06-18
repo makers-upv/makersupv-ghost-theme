@@ -1,16 +1,6 @@
 var u = require("umbrellajs").u
 var swal = require("sweetalert")
 
-// Lazy load images
-var loaded = false
-function lazyload() {
-  if (!loaded) {
-    loaded = u("img.lazy").each(function (node) {
-      u(node).attr("src", u(node).attr("data-src"))
-    })
-  }
-}
-u([window]).on("scroll", lazyload)
 var body = u("body")
 u([window]).on("scroll", function (e) {
   u("nav").toggleClass("active", body.size().top < -10)
