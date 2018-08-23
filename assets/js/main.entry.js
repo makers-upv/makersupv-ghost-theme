@@ -22,7 +22,6 @@ function reloadParts() {
 
     checked.forEach(function (one) {
       if (u(article).hasClass("tag-" + one)) {
-        lazyload()
         u(article).removeClass("hidden")
       }
     })
