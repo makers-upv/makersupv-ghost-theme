@@ -233,14 +233,31 @@ main {
     padding-top: 0;
   }
 
-  .kg-image-card,
-  .kg-embed-card {
+  .kg-image-card {
     @extend %card;
+    width: 50%;
+
+    &.kg-width-wide {
+      width: 80%;
+    }
+
+    &.kg-width-full {
+      width: 100%;
+    }
   }
 
-  .kg-width-wide,
-  .kg-width-full {
-    width: 100%;
+  .kg-embed-card {
+    width: fit-content;
+  }
+
+  .kg-image-card,
+  .kg-embed-card {
+    margin-left: auto;
+    margin-right: auto;
+
+    figcaption {
+      @extend footer;
+    }
   }
 }
 
