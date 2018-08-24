@@ -60,11 +60,11 @@ gulp.task("build", gulp.parallel("build:js", "build:css", "build:images", "build
 
 gulp.task("package", () => pump([
   gulp.src("build/**/*"),
-  zip("" + pkg.name + "-" + pkg.version + ".zip"),
+  zip(`${pkg.name}-${pkg.version}.zip`),
   gulp.dest("dist/")
 ]))
 
-gulp.task("validate", () => execa("gscan", ["build"], { stdio: "inherit" }))
+gulp.task("validate", () => execa("gscan", ["-1", "build"], { stdio: "inherit" }))
 
 gulp.task("clean", () => Promise.all(["build", "dist"].map(dir => fse.remove(dir))))
 
