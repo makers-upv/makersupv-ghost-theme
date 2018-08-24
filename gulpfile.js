@@ -68,7 +68,7 @@ gulp.task("package", () => pump([
   gulp.dest("dist/")
 ]))
 
-gulp.task("validate", () => execa("gscan", ["-1", "build"], { stdio: "inherit" }))
+gulp.task("validate", () => execa("gscan", ["build"], { stdio: "inherit" }))
 
 gulp.task("clean", () => Promise.all(["build", "dist"].map(dir => fse.remove(dir))))
 

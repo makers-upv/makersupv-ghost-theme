@@ -6,6 +6,9 @@
     "name": "Makers UPV",
     "email": "makersupv@gmail.com"
   },
+  "keywords": [
+    "ghost-theme"
+  ],
   "config": {
     "posts_per_page": 21
   },
