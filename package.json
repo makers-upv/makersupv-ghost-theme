@@ -10,9 +10,7 @@
     "posts_per_page": 21
   },
   "dependencies": {
-    "picnic": "^6.5.0",
-    "sweetalert": "^2.1.0",
-    "umbrellajs": "^2.10.2"
+    "picnic": "^6.5.0"
   },
   "devDependencies": {
     "autoprefixer": "^8.6.2",

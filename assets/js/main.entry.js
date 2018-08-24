@@ -1,60 +1,85 @@
-var u = require("umbrellajs").u
-var swal = require("sweetalert")
+// Helpful alias
+const $ = document.querySelector.bind(document)
+const $$ = document.querySelectorAll.bind(document)
 
-var body = u("body")
-u([window]).on("scroll", function (e) {
-  u("nav").toggleClass("active", body.size().top < -10)
-})
+// #region Toggle header
+let currenState = false
+const getScroll = document.body.getBoundingClientRect.bind(document.body)
+const nav = $("nav")
 
-// Filter the different parts with the buttons
-function reloadParts() {
-  var checked = []
-  u(".category input:checked").each(function (data) {
-    checked.push(u(data).attr("data-type"))
-  })
-
-  u("article").each(function (article) {
-    u(article).addClass("hidden")
-
-    if (checked.length === 0) {
-      u(article).removeClass("hidden")
-    }
-
-    checked.forEach(function (one) {
-      if (u(article).hasClass("tag-" + one)) {
-        u(article).removeClass("hidden")
-      }
-    })
-  })
+function headerCheck() {
+  const expectedState = getScroll().top < -10
+  if (currenState !== expectedState) {
+    currenState = expectedState
+    nav.classList.toggle("active", expectedState)
+  }
 }
 
-u(".category input").on("change", reloadParts)
-reloadParts()
+window.addEventListener("scroll", headerCheck)
+headerCheck()
+// #endregion
 
-u("#contacto form").ajax(
-  function (err, data) {
-    console.log(err, data)
-    if (err) {
-      swal(
-        "Oops!",
-        "Algo ha fallado, por favor contáctanos en contacto" +
+// #region Filter tags
+function reloadTags() {
+  const checked = []
+  for (const tag of $$(".category input:checked")) {
+    checked.push(tag.getAttribute("data-type"))
+  }
+
+  if (checked.length === 0) {
+    for (const article of $$("article.hidden")) {
+      article.classList.remove("hidden")
+    }
+  } else {
+    for (const article of $$("article")) {
+      let shouldShow = false
+      for (const tag of checked) {
+        if (article.classList.contains(`tag-${tag}`)) {
+          shouldShow = true
+          break
+        }
+      }
+      if (shouldShow) {
+        article.classList.remove("hidden")
+      } else {
+        article.classList.add("hidden")
+      }
+    }
+  }
+}
+
+$(".category").addEventListener("change", reloadTags)
+reloadTags()
+// #endregion
+
+// #region Contact form
+const form = $("#contacto form")
+form.addEventListener("submit", e => {
+  e.preventDefault()
+
+  const data = new FormData(form)
+  const req = new XMLHttpRequest()
+
+  req.addEventListener("load", () => {
+    swal(
+      "Enviado!",
+      "Nos pondremos en contacto tan pronto como sea posible",
+      "success"
+    )
+    form.reset()
+  })
+
+  req.addEventListener("error", () => {
+    swal(
+      "Oops!",
+      "Algo ha fallado, por favor contáctanos en contacto" +
         "@" +
         "makersupv.com",
-        "error"
-      )
-    } else {
-      swal(
-        "Enviado!",
-        "Nos pondremos en contacto tan pronto como sea posible",
-        "success"
-      )
-      u("#contact form")
-        .first()
-        .reset()
-    }
-  },
-  function () {
-    u('[name="_cc"]').first().value =
-      "public" + "francisco" + "@" + "hotmail.com"
-  }
-)
+      "error"
+    )
+  })
+
+  req.open(form.method, form.action)
+  req.send(data)
+})
+// #endregion

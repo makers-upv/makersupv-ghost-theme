@@ -13,7 +13,11 @@ gulp.task("build:js", () => pump([
   gulp.src("assets/js/**/*.entry.js"),
   browserify({
     transform: [
-      require("bubleify"),
+      [require("bubleify"), {
+        transforms: {
+          dangerousForOf: true
+        }
+      }],
       require("uglifyify")
     ]
   }),
