@@ -232,6 +232,16 @@ main {
   h1 {
     padding-top: 0;
   }
+
+  .kg-image-card,
+  .kg-embed-card {
+    @extend %card;
+  }
+
+  .kg-width-wide,
+  .kg-width-full {
+    width: 100%;
+  }
 }
 
 .pagination {
