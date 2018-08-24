@@ -20,34 +20,38 @@ headerCheck()
 // #endregion
 
 // #region Filter tags
-function reloadTags() {
-  const checked = []
-  for (const tag of $$(".category input:checked")) {
-    checked.push(tag.getAttribute("data-type"))
-  }
+const categories = $(".category")
 
-  if (checked.length === 0) {
-    for (const article of $$("article.hidden")) {
-      article.classList.remove("hidden")
+if (categories) {
+  function reloadTags() {
+    const checked = []
+    for (const tag of $$(".category input:checked")) {
+      checked.push(tag.getAttribute("data-type"))
     }
-  } else {
-    for (const article of $$("article")) {
-      let shouldShow = false
-      for (const tag of checked) {
-        if (article.classList.contains(`tag-${tag}`)) {
-          shouldShow = true
-          break
+
+    if (checked.length === 0) {
+      for (const article of $$("article.hidden")) {
+        article.classList.remove("hidden")
+      }
+    } else {
+      for (const article of $$("article")) {
+        let shouldShow = false
+        for (const tag of checked) {
+          if (article.classList.contains(`tag-${tag}`)) {
+            shouldShow = true
+            break
+          }
+        }
+        if (shouldShow) {
+          article.classList.remove("hidden")
+        } else {
+          article.classList.add("hidden")
         }
       }
-      if (shouldShow) {
-        article.classList.remove("hidden")
-      } else {
-        article.classList.add("hidden")
-      }
     }
   }
-}
 
-$(".category").addEventListener("change", reloadTags)
-reloadTags()
+  categories.addEventListener("change", reloadTags)
+  reloadTags()
+}
 // #endregion
