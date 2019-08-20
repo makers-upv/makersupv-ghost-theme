@@ -32,7 +32,7 @@ gulp.task("build:css", () => pump([
     importer: require("node-sass-package-importer")()
   }).on("error", sass.logError),
   postcss([
-    require("autoprefixer")({ browsers: ["last 2 versions", ">5%"] }),
+    require("autoprefixer")(),
     require("cssnano")()
   ]),
   gulp.dest("build/assets/css/")
