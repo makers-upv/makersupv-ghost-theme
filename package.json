@@ -19,6 +19,7 @@
     "autoprefixer": "^9.6.1",
     "bubleify": "^1.2.1",
     "cssnano": "^4.1.10",
+    "esm": "^3.2.25",
     "execa": "^2.0.4",
     "fs-extra": "^8.1.0",
     "gscan": "^2.7.0",
