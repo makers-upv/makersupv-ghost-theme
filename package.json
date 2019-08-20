@@ -1,14 +1,14 @@
 {
   "name": "makersupv",
   "version": "2.0.0",
+  "keywords": [
+    "ghost-theme"
+  ],
   "license": "MIT",
   "author": {
     "name": "Makers UPV",
     "email": "makersupv@gmail.com"
   },
-  "keywords": [
-    "ghost-theme"
-  ],
   "config": {
     "posts_per_page": 21
   },

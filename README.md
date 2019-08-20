@@ -10,7 +10,8 @@ To edit something:
 3.  `npx gulp`
 4.  Upload the .zip in `dist/` to Ghost
 
-Some things are not embedded in the theme but configurable from the Ghost admin panel
+Some things are not embedded in the theme but configurable from the Ghost admin
+panel
 
 - Cover image
 - Logo
