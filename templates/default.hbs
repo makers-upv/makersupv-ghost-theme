@@ -18,9 +18,9 @@
     </head>
     <body class="{{body_class}}">
       <nav>
-        <a class="brand" href="{{@blog.url}}">
+        <a class="brand" href="{{@site.url}}">
           <img class="logo" src="{{asset "images/logo.svg"}}" />
-          <h2 class="name">{{@blog.title}}</h2>
+          <h2 class="name">{{@site.title}}</h2>
         </a>
 
         <input id="bmenub" type="checkbox" class="show" />
@@ -30,11 +30,11 @@
         </div>
       </nav>
 
-      <div class="hero {{^is "index"}}small{{/is}}" style="background-image: url('{{@blog.cover_image}}');">
+      <div class="hero {{^is "index"}}small{{/is}}" style="background-image: url('{{@site.cover_image}}');">
         {{#is "home"}}
           <div class="container">
-            <h1>{{@blog.title}}</h1>
-            <p>{{@blog.description}}</p>
+            <h1>{{@site.title}}</h1>
+            <p>{{@site.description}}</p>
             {{#if @labs.publicAPI}}
               {{#get "posts" limit="1" order="published_at desc" filter="featured:true" as |featured|}}
                 {{#foreach featured limit="1"}}
@@ -51,7 +51,7 @@
       {{{body}}}
 
       <footer>
-        <strong>{{@blog.title}}.</strong> Encuéntranos en <a href="{{facebook_url @blog.facebook}}">Facebook</a> | <a href="{{twitter_url @blog.twitter}}">Twitter </a> | <a href="https://github.com/makers-upv">Github </a> | <a href="https://www.linkedin.com/groups/Makers-UPV-8123860">Linkedin </a> | <a href="https://www.flickr.com/photos/129849875@N03/">Flickr</a>
+        <strong>{{@site.title}}.</strong> Encuéntranos en <a href="{{facebook_url @site.facebook}}">Facebook</a> | <a href="{{twitter_url @site.twitter}}">Twitter </a> | <a href="https://github.com/makers-upv">Github </a> | <a href="https://www.linkedin.com/groups/Makers-UPV-8123860">Linkedin </a> | <a href="https://www.flickr.com/photos/129849875@N03/">Flickr</a>
       </footer>
 
       <script src="{{asset "js/main.entry.js"}}"></script>
