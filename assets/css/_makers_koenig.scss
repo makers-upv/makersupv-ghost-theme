@@ -1,0 +1,24 @@
+.kg-gallery-container {
+  @extend .flex;
+  flex-wrap: nowrap;
+
+  + figcaption {
+    @extend footer;
+  }
+}
+
+.kg-gallery-row {
+  @extend .full;
+
+  @extend .flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.kg-gallery-image {
+  img {
+    max-width: 100%;
+    min-width: 100%;
+    height: auto;
+  }
+}
