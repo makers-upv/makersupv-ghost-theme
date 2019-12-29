@@ -86,7 +86,7 @@ export const pack = () =>
   ])
 
 export const validate = async () =>
-  await execa("gscan", ["build"], { stdio: "inherit" })
+  await execa("gscan", ["build", "--v2"], { stdio: "inherit" })
 const silent_validate = async () => {
   try {
     await validate()
